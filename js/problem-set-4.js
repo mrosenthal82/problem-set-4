@@ -95,7 +95,17 @@ function inches() {
   let inches = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 5 CODE HERE
+  var miles = Math.floor(inches/12/5280);
+  var milesExtra = inches/12/5280-miles;
+  var yards = Math.floor(milesExtra*1760);
+  var yardsExtra = milesExtra*1760-yards;
+  var feet = Math.floor(yardsExtra*3);
+  var feetExtra = yardsExtra*3-feet;
+  inches = (feetExtra*12).toFixed(0);
+
+  // var milesExtra = yards/1760-miles;
+  var ex5 = document.getElementById("output5");
+  ex5.innerHTML = "Miles: "+miles+"<br/>Yards: "+yards+"</br>Feet: "+feet+"<br/>Inches: "+inches;
 
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
