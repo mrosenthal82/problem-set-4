@@ -47,7 +47,9 @@ function celsius() {
   // The above code generates a random number between -100 and 1000
   // (inclusive), and rounds this value to 2 decimal places.
 
-  // WRITE YOUR EXERCISE 3 CODE HERE
+  let fahr = (cels*(9/5)+32).toFixed(2);
+  var ex3 = document.getElementById("output3");
+  ex3.innerHTML = cels + " degrees Celsius equals " + fahr + " degrees Fahrenheit.";
 
   ////////////////////////// DO NOT MODIFY
   check("celsius", cels); // DO NOT MODIFY
