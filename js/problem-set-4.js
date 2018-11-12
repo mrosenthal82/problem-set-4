@@ -157,7 +157,17 @@ function fluidOunces() {
   let fluidOunces = input; // DO NOT MODIFY
   /////////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 7 CODE HERE
+  var gal = Math.floor(fluidOunces/128);
+  var galExtra = fluidOunces/128-gal;
+  var quarts = Math.floor(galExtra*4);
+  var quartsExtra = galExtra*4-quarts;
+  var pints = Math.floor(quartsExtra*2);
+  var pintsExtra = quartsExtra*2-pints;
+  var cups = Math.floor(pintsExtra*2);
+  var cupsExtra = pintsExtra*2-cups;
+  fluidOunces = (cupsExtra*8).toFixed(0);
+  var ex7 = document.getElementById("output7");
+  ex7.innerHTML = "Gallons: "+gal+"<br/>Quarts: "+quarts+"<br/>Pints: "+pints+"<br/>Cups: "+cups+"<br/>Fluid Ounces: "+fluidOunces;
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
