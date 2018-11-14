@@ -191,7 +191,13 @@ function ounces() {
   let ounces = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 8 CODE HERE
+  let tons = Math.floor(ounces/32000);
+  let tonsExtra = ounces%32000;
+  let pounds = Math.floor(tonsExtra/16);
+  let poundsExtra = tonsExtra%16;
+  ounces = (poundsExtra).toFixed(0);
+  let ex = document.getElementById("output8");
+  ex.innerHTML = `Tons: ${tons}<br/>Pounds: ${pounds}<br/>Ounces: ${ounces}`;
 
   ////////////////////////// DO NOT MODIFY
   check("ounces", input); // DO NOT MODIFY
