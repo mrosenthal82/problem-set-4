@@ -4,8 +4,8 @@
 
 function hello() {
 
-  var ex1 = document.getElementById("output1");
-  ex1.innerHTML = "Hello, AP Computer Science Principles!";
+  let ex = document.getElementById("output1");
+  ex.innerHTML = "Hello, AP Computer Science Principles!";
 
   ////////////////// DO NOT MODIFY
   check("hello"); // DO NOT MODIFY
@@ -26,8 +26,8 @@ function helloAgain() {
   // do not need to re-declare it, only assign it a value.
 
   name = prompt("Enter your name");
-  var ex2 = document.getElementById("output2");
-  ex2.innerHTML = "Hello, " + name + "!";
+  let ex = document.getElementById("output2");
+  ex.innerHTML = "Hello, " + name + "!";
 
   ///////////////////////////// DO NOT MODIFY
   check("helloAgain", name); // DO NOT MODIFY
@@ -48,8 +48,8 @@ function celsius() {
   // (inclusive), and rounds this value to 2 decimal places.
 
   let fahr = (cels*(9/5)+32).toFixed(2);
-  var ex3 = document.getElementById("output3");
-  ex3.innerHTML = cels + " degrees Celsius equals " + fahr + " degrees Fahrenheit.";
+  let ex = document.getElementById("output3");
+  ex.innerHTML = cels + " degrees Celsius equals " + fahr + " degrees Fahrenheit.";
 
   ////////////////////////// DO NOT MODIFY
   check("celsius", cels); // DO NOT MODIFY
@@ -69,9 +69,9 @@ function fahrenheit() {
   // The above code generates a random number between -100 and 1000
   // (inclusive), and rounds this value to 2 decimal places.
 
-  var cels = ((fahr-32)*(5/9)).toFixed(2);
-  var ex4 = document.getElementById("output4");
-  ex4.innerHTML = fahr + " degrees Fahrenheit equals " + cels + " degrees Celsius.";
+  let cels = ((fahr-32)*(5/9)).toFixed(2);
+  let ex = document.getElementById("output4");
+  ex.innerHTML = fahr + " degrees Fahrenheit equals " + cels + " degrees Celsius.";
 
   ///////////////////////////// DO NOT MODIFY
   check("fahrenheit", fahr); // DO NOT MODIFY
@@ -95,15 +95,15 @@ function inches() {
   let inches = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  var miles = Math.floor(inches/12/5280);
-  var milesExtra = inches/12/5280-miles;
-  var yards = Math.floor(milesExtra*1760);
-  var yardsExtra = milesExtra*1760-yards;
-  var feet = Math.floor(yardsExtra*3);
-  var feetExtra = yardsExtra*3-feet;
-  inches = (feetExtra*12).toFixed(0);
-  var ex5 = document.getElementById("output5");
-  ex5.innerHTML = "Miles: "+miles+"<br/>Yards: "+yards+"</br>Feet: "+feet+"<br/>Inches: "+inches;
+  let miles = Math.floor(inches/63360);
+  let milesExtra = inches%63360;
+  let yards = Math.floor(milesExtra/36);
+  let yardsExtra = milesExtra%36;
+  let feet = Math.floor(yardsExtra/12);
+  let feetExtra = yardsExtra%12;
+  inches = (feetExtra).toFixed(0);
+  let ex = document.getElementById("output5");
+  ex.innerHTML = `Miles: ${miles}<br/>Yards: ${yards}</br>Feet: ${feet}<br/>Inches: ${inches}`;
 
   ////////////////////////// DO NOT MODIFY
   check("inches", input); // DO NOT MODIFY
@@ -127,13 +127,13 @@ function centimeters() {
   let centimeters = input; // DO NOT MODIFY
   /////////////////////////// DO NOT MODIFY
 
-  var km = Math.floor(centimeters/100000);
-  var kmExtra = centimeters/100000-km;
-  var meters = Math.floor(kmExtra*1000);
-  var metersExtra = kmExtra*1000-meters;
-  centimeters = (metersExtra*100).toFixed(0);
-  var ex6 = document.getElementById("output6");
-  ex6.innerHTML = "Kilometers: "+km+"<br/>Meters: "+meters+"<br/>Centimeters: "+centimeters;
+  let km = Math.floor(centimeters/100000);
+  let kmExtra = centimeters%100000;
+  let meters = Math.floor(kmExtra/100);
+  let metersExtra = kmExtra%100;
+  centimeters = (metersExtra).toFixed(0);
+  let ex = document.getElementById("output6");
+  ex.innerHTML = `Kilometers: ${km}<br/>Meters: ${meters}<br/>Centimeters: ${centimeters}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("centimeters", input); // DO NOT MODIFY
@@ -157,17 +157,17 @@ function fluidOunces() {
   let fluidOunces = input; // DO NOT MODIFY
   /////////////////////////// DO NOT MODIFY
 
-  var gal = Math.floor(fluidOunces/128);
-  var galExtra = fluidOunces/128-gal;
-  var quarts = Math.floor(galExtra*4);
-  var quartsExtra = galExtra*4-quarts;
-  var pints = Math.floor(quartsExtra*2);
-  var pintsExtra = quartsExtra*2-pints;
-  var cups = Math.floor(pintsExtra*2);
-  var cupsExtra = pintsExtra*2-cups;
-  fluidOunces = (cupsExtra*8).toFixed(0);
-  var ex7 = document.getElementById("output7");
-  ex7.innerHTML = "Gallons: "+gal+"<br/>Quarts: "+quarts+"<br/>Pints: "+pints+"<br/>Cups: "+cups+"<br/>Fluid Ounces: "+fluidOunces;
+  let gal = Math.floor(fluidOunces/128);
+  let galExtra = fluidOunces%128;
+  let quarts = Math.floor(galExtra/32);
+  let quartsExtra = galExtra%32;
+  let pints = Math.floor(quartsExtra/16);
+  let pintsExtra = quartsExtra%16;
+  let cups = Math.floor(pintsExtra/8.11537);
+  let cupsExtra = pintsExtra%8.11537;
+  fluidOunces = (cupsExtra).toFixed(0);
+  let ex = document.getElementById("output7");
+  ex.innerHTML = `Gallons: ${gal}<br/>Quarts: ${quarts}<br/>Pints: ${pints}<br/>Cups: ${cups}<br/>Fluid Ounces: ${fluidOunces}`;
 
   /////////////////////////////// DO NOT MODIFY
   check("fluidOunces", input); // DO NOT MODIFY
