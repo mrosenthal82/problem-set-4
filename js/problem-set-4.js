@@ -261,10 +261,14 @@ function change() {
   let dimesExtra = quartersExtra%.10;
   let nickels = Math.floor(dimesExtra/.05);
   let nickelsExtra = dimesExtra%.05;
-  let pennies = Math.floor(nickelsExtra/.01);
-  let coins = quarters+dimes+nickels+pennies;
+  let pennies = (nickelsExtra/.01);
+  let coins = (quarters+dimes+nickels+pennies).toFixed(0);
   let ex = document.getElementById("output10");
-  ex.innerHTML = `${coins} coins.`;
+  if (coins = 1){
+    ex.innerHTML = `${coins} coin.`;
+  } else {
+    ex.innerHTML = `${coins} coins.`;
+  }
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
