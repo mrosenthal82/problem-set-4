@@ -249,26 +249,32 @@ function change() {
   ///////////////////////////////////////////////////////////////////// DO NOT MODIFY
 
   // You are free to modify the value of amount, which you'll likely
-  // need to do. Please do not modify the value of input.
+  // need to do. Please do not modify the value of input
+
+    while (input > 1){
+      input = prompt("Enter a non-negative number less than 1.00.");
+    }
 
   ////////////////////// DO NOT MODIFY
   let amount = input; // DO NOT MODIFY
   ////////////////////// DO NOT MODIFY
 
-  let quarters = Math.floor(amount/.25);
-  let quartersExtra = amount%.25;
-  let dimes = Math.floor(quartersExtra/.10);
-  let dimesExtra = quartersExtra%.10;
-  let nickels = Math.floor(dimesExtra/.05);
-  let nickelsExtra = dimesExtra%.05;
-  let pennies = (nickelsExtra/.01);
+  amount = amount*100
+  let quarters = Math.floor(amount/25);
+  let quartersExtra = (amount%25);
+  let dimes = Math.floor(quartersExtra/10);
+  let dimesExtra = quartersExtra%10;
+  let nickels = Math.floor(dimesExtra/5);
+  let nickelsExtra = dimesExtra%5;
+  let pennies = (nickelsExtra/1);
   let coins = (quarters+dimes+nickels+pennies).toFixed(0);
   let ex = document.getElementById("output10");
-  if (coins = 1){
+  if (coins == 1){
     ex.innerHTML = `${coins} coin.`;
   } else {
     ex.innerHTML = `${coins} coins.`;
   }
+
 
   ////////////////////////// DO NOT MODIFY
   check("change", input); // DO NOT MODIFY
